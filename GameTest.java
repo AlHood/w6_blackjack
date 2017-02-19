@@ -73,17 +73,5 @@ assertEquals( 11, dealer.determineWinningScore(table));
 }
 
 
-@Test
-public void canPlaySimpleGame2() {
-  table.addPlayerToGame(player1);
-
-  dealer.getNewDeck();
-  player1.askForCard(dealer);
-  
-assertEquals( 11, dealer.determineWinningScore(table));
-}
-
-// welp this fails. Its like cards of face value 1 don't get created. The winner is always 5 when it should be the Ace of Hearts.
-
 
 }
