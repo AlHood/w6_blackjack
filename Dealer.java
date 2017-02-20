@@ -1,10 +1,13 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 
 public class Dealer {
   private ArrayList<Card> deck;
+  private ArrayList<Card> shuffleDeck;
   private int i; 
   private int winningScore;
+  private Random random;
   public Dealer() {
     this.deck = new ArrayList<Card>(); 
 
@@ -35,25 +38,31 @@ public class Dealer {
   }
 
 
-public int howBigMyDeck() {
-return this.deck.size();
-}
+  public int howBigMyDeck() {
+    return this.deck.size();
+  }
 
 
-//   public void shuffleDeck() {
-// This should probably be implemented last as random things are difficult to test.
-//   }
+  public void shuffleTheDeck() {
+    shuffleDeck = new ArrayList<Card>();
+    while (this.deck.size() > 0) {
+      shuffleDeck.add(deck.remove(random.nextInt((this.deck.size()+1))));
+    }
+deck.clear();
+deck.addAll(shuffleDeck);
+  }
+
 
 
   public Card giveRequestedCard() {
-return deck.remove(1);
+    return deck.remove(1);
   }
 
 
   public int determineWinningScore(Table table) {
-winningScore = table.findTopScore();
-return winningScore;
-}
+    winningScore = table.findTopScore();
+    return winningScore;
+  }
 
 
 // public String findWinner(int winnersScore) {

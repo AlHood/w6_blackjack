@@ -72,6 +72,13 @@ assertEquals( 11, dealer.determineWinningScore(table));
 
 }
 
+@Test
+public void canShuffleDeck(){
+  dealer.getNewDeck(); 
+  dealer.shuffleTheDeck();
+
+  assertEquals(52, dealer.howBigMyDeck());
+}
 
 
 }
