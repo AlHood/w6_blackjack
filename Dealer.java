@@ -8,6 +8,8 @@ public class Dealer {
   private int i; 
   private int winningScore;
   private Random random;
+private ArrayList<String> allWinners;
+
   public Dealer() {
     this.deck = new ArrayList<Card>(); 
 
@@ -45,8 +47,8 @@ public class Dealer {
 
   public void shuffleTheDeck() {
     shuffleDeck = new ArrayList<Card>();
-    while (this.deck.size() > 0) {
-      shuffleDeck.add(deck.remove(random.nextInt((this.deck.size()+1))));
+    while (deck.size() > 0) {
+      shuffleDeck.add(deck.remove(random.nextInt(deck.size()+1)));
     }
 deck.clear();
 deck.addAll(shuffleDeck);
@@ -55,7 +57,7 @@ deck.addAll(shuffleDeck);
 
 
   public Card giveRequestedCard() {
-    return deck.remove(1);
+    return deck.remove(0);
   }
 
 
@@ -66,7 +68,9 @@ deck.addAll(shuffleDeck);
 
 
 // public String findWinner(int winnersScore) {
-// return "The winner is " + player.name + "with " + winnersScore.toString 
+//   allWinners = new ArrayList<String>();
+//   allWinners.add(table.findPlayerWithScore(winnersScore));
+// return "The winning score was " + winnersScore + " as held by " + allWinners.toString();
 //   }
 
 

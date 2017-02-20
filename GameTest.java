@@ -2,6 +2,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.Random;
+
 
 
 public class GameTest {
@@ -12,6 +14,7 @@ Player player1;
 Player player2;
 Player player3;
 Player player4;
+
 
 
   @Before

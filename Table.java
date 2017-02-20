@@ -6,6 +6,7 @@ public class Table {
 private ArrayList<Player> game;
 private Player player1;
 private int topScore;
+private ArrayList<String> winners;
 
 
 public Table() {
@@ -32,7 +33,16 @@ return topScore;
 
 }
 
+public ArrayList<String> findPlayerWithScore(int playerScore){
+  winners = new ArrayList<String>();
+for (Player player : game ){
+  if (player.howBigMyScore() == playerScore ) {
+winners.add(player.name);
+  }
+}
 
+  return winners; 
+}
 
 
 
